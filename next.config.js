@@ -7,6 +7,15 @@ const nextConfig = {
   images: {
     remotePatterns: [],
   },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/en',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = withNextIntl(nextConfig);
