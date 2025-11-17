@@ -13,7 +13,7 @@ export default function LanguageSwitcher() {
 
   const currentLocale = params.locale as string;
 
-  const locales = [
+  const locales: Array<{ code: 'en' | 'ko'; label: string; flag: string }> = [
     { code: 'en', label: 'English', flag: '🇺🇸' },
     { code: 'ko', label: '한국어', flag: '🇰🇷' }
   ];
