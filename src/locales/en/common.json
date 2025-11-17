@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "title": "Recurro – Never Miss Important Recurring Tasks",
+    "description": "Recurro is the elegant solution for managing recurring tasks. From pet care to home maintenance, stay organized with smart notifications and beautiful design.",
+    "ogTitle": "Recurro – Personal Task Tracking System",
+    "ogDescription": "Never miss important recurring tasks again! Track pet care, home maintenance, vehicle service, and more with Recurro."
+  },
+  "nav": {
+    "features": "Features",
+    "useCases": "Use Cases",
+    "download": "Download"
+  },
+  "hero": {
+    "title": "Never miss important recurring tasks again",
+    "subtitle": "Recurro is the elegant solution for managing all those tasks that happen regularly but are easy to forget.",
+    "description": "From watering plants and giving flea medicine to your dog to car maintenance and cleaning your kettle or oven, Recurro keeps you organized and on track with smart notifications and beautiful, intuitive design.",
+    "downloadIOS": "Download for iOS",
+    "downloadAndroid": "Download for Android",
+    "orGetOn": "or get on"
+  },
+  "screenshots": {
+    "alt1": "Recurro App Screenshot showing task list",
+    "alt2": "Recurro App Screenshot showing task details"
+  },
+  "useCases": {
+    "title": "Perfect for these situations",
+    "home": {
+      "emoji": "🏠",
+      "title": "Home maintenance",
+      "description": "Change air filters, clean gutters, descale coffee machine"
+    },
+    "pets": {
+      "emoji": "🐕",
+      "title": "Pet care",
+      "description": "Monthly flea treatments, regular grooming, vet checkups"
+    },
+    "vehicle": {
+      "emoji": "🚗",
+      "title": "Vehicle maintenance",
+      "description": "Oil changes, tire rotations, inspection renewals"
+    },
+    "plants": {
+      "emoji": "🌱",
+      "title": "Plant care",
+      "description": "Watering schedules, fertilizing, repotting"
+    },
+    "health": {
+      "emoji": "💊",
+      "title": "Health routines",
+      "description": "Medication reminders, dental cleanings, eye exams"
+    },
+    "cleaning": {
+      "emoji": "🧽",
+      "title": "Deep cleaning",
+      "description": "Oven cleaning, carpet shampooing, window washing"
+    }
+  },
+  "features": {
+    "title": "Key Features",
+    "intervalTracking": {
+      "title": "True Interval-Based Tracking",
+      "description": "Unlike calendar apps, tasks reset from your completion date, not fixed schedules. Changed your air filter today? Recurro knows exactly when it's due again based on YOUR timing."
+    },
+    "smartNotifications": {
+      "title": "Smart Notifications",
+      "description": "Get gentle reminders when tasks are due. Never forget important maintenance again with customizable notification settings."
+    },
+    "visualStatus": {
+      "title": "Visual Status System",
+      "description": "See at a glance what's overdue, due today, or coming up. Color-coded categories and clear status indicators keep you organized."
+    },
+    "completionHistory": {
+      "title": "Completion History",
+      "description": "Track when tasks were completed and add notes. See patterns over time and never wonder \"when did I last do this?\""
+    },
+    "nativeDesign": {
+      "title": "Clean, Native Design",
+      "description": "Built with modern design principles for a smooth, intuitive experience that feels right at home on your device."
+    }
+  },
+  "whyChoose": {
+    "title": "Why Choose Recurro?",
+    "focusedPurpose": {
+      "title": "Focused Purpose",
+      "description": "Built specifically for recurring maintenance tasks, not daily habits or project management"
+    },
+    "flexibleIntervals": {
+      "title": "Flexible Intervals",
+      "description": "Set tasks for days, weeks, months, or custom periods"
+    },
+    "noSubscription": {
+      "title": "No Subscription Required",
+      "description": "One-time purchase with all features included"
+    },
+    "privacyFirst": {
+      "title": "Privacy First",
+      "description": "Your data stays on your device"
+    }
+  },
+  "download": {
+    "title": "Download Recurro",
+    "subtitle": "Transform how you manage life's important recurring tasks",
+    "availableOn": "Available on"
+  },
+  "footer": {
+    "tagline": "Recurro transforms how you manage life's important recurring tasks.",
+    "copyright": "© 2025 Dundin Studio. All rights reserved."
+  }
+}

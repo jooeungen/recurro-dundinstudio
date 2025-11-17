@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "title": "Recurro – 중요한 반복 작업을 놓치지 마세요",
+    "description": "Recurro는 반복 작업을 관리하는 우아한 솔루션입니다. 반려동물 관리부터 집안 유지보수까지, 스마트 알림과 아름다운 디자인으로 체계적으로 관리하세요.",
+    "ogTitle": "Recurro – 개인 작업 추적 시스템",
+    "ogDescription": "중요한 반복 작업을 다시는 놓치지 마세요! Recurro로 반려동물 관리, 집안 유지보수, 차량 정비 등을 추적하세요."
+  },
+  "nav": {
+    "features": "기능",
+    "useCases": "활용 사례",
+    "download": "다운로드"
+  },
+  "hero": {
+    "title": "중요한 반복 작업을 다시는 놓치지 마세요",
+    "subtitle": "Recurro는 정기적으로 발생하지만 잊기 쉬운 모든 작업을 관리하는 우아한 솔루션입니다.",
+    "description": "식물에 물 주기와 반려견 구충제부터 자동차 정비와 주전자 또는 오븐 청소까지, Recurro는 스마트 알림과 아름답고 직관적인 디자인으로 체계적으로 관리할 수 있도록 도와줍니다.",
+    "downloadIOS": "iOS 다운로드",
+    "downloadAndroid": "Android 다운로드",
+    "orGetOn": "또는"
+  },
+  "screenshots": {
+    "alt1": "작업 목록을 보여주는 Recurro 앱 스크린샷",
+    "alt2": "작업 상세 정보를 보여주는 Recurro 앱 스크린샷"
+  },
+  "useCases": {
+    "title": "이런 상황에 완벽합니다",
+    "home": {
+      "emoji": "🏠",
+      "title": "집안 유지보수",
+      "description": "에어필터 교체, 배수구 청소, 커피머신 세척"
+    },
+    "pets": {
+      "emoji": "🐕",
+      "title": "반려동물 관리",
+      "description": "월별 구충제, 정기 미용, 동물병원 검진"
+    },
+    "vehicle": {
+      "emoji": "🚗",
+      "title": "차량 정비",
+      "description": "오일 교환, 타이어 로테이션, 검사 갱신"
+    },
+    "plants": {
+      "emoji": "🌱",
+      "title": "식물 관리",
+      "description": "물 주기 일정, 비료 주기, 분갈이"
+    },
+    "health": {
+      "emoji": "💊",
+      "title": "건강 루틴",
+      "description": "약 복용 알림, 치과 검진, 안과 검진"
+    },
+    "cleaning": {
+      "emoji": "🧽",
+      "title": "대청소",
+      "description": "오븐 청소, 카펫 세척, 창문 닦기"
+    }
+  },
+  "features": {
+    "title": "주요 기능",
+    "intervalTracking": {
+      "title": "진정한 간격 기반 추적",
+      "description": "캘린더 앱과 달리, 작업은 고정된 일정이 아닌 완료 날짜를 기준으로 재설정됩니다. 오늘 에어필터를 교체했다면? Recurro는 당신의 타이밍을 기반으로 다음 교체 시기를 정확히 알려줍니다."
+    },
+    "smartNotifications": {
+      "title": "스마트 알림",
+      "description": "작업 기한이 되면 부드러운 알림을 받으세요. 맞춤 설정 가능한 알림으로 중요한 유지보수를 절대 잊지 마세요."
+    },
+    "visualStatus": {
+      "title": "시각적 상태 시스템",
+      "description": "기한이 지났거나, 오늘 해야 하거나, 곧 예정된 작업을 한눈에 확인하세요. 색상으로 구분된 카테고리와 명확한 상태 표시기로 체계적으로 관리하세요."
+    },
+    "completionHistory": {
+      "title": "완료 기록",
+      "description": "작업이 완료된 시기를 추적하고 메모를 추가하세요. 시간에 따른 패턴을 확인하고 \"마지막으로 언제 했더라?\"라는 고민을 없애세요."
+    },
+    "nativeDesign": {
+      "title": "깔끔한 네이티브 디자인",
+      "description": "현대적인 디자인 원칙으로 제작되어 기기에서 자연스럽게 느껴지는 부드럽고 직관적인 경험을 제공합니다."
+    }
+  },
+  "whyChoose": {
+    "title": "왜 Recurro를 선택해야 하나요?",
+    "focusedPurpose": {
+      "title": "집중된 목적",
+      "description": "일상 습관이나 프로젝트 관리가 아닌, 반복 유지보수 작업을 위해 특별히 제작되었습니다"
+    },
+    "flexibleIntervals": {
+      "title": "유연한 간격",
+      "description": "일, 주, 월 또는 사용자 정의 기간으로 작업을 설정하세요"
+    },
+    "noSubscription": {
+      "title": "구독 불필요",
+      "description": "모든 기능이 포함된 일회성 구매"
+    },
+    "privacyFirst": {
+      "title": "프라이버시 우선",
+      "description": "귀하의 데이터는 기기에 안전하게 보관됩니다"
+    }
+  },
+  "download": {
+    "title": "Recurro 다운로드",
+    "subtitle": "인생의 중요한 반복 작업을 관리하는 방식을 혁신하세요",
+    "availableOn": "다음에서 이용 가능"
+  },
+  "footer": {
+    "tagline": "Recurro는 인생의 중요한 반복 작업을 관리하는 방식을 혁신합니다.",
+    "copyright": "© 2025 Dundin Studio. All rights reserved."
+  }
+}
