@@ -58,9 +58,9 @@ export default function UseCases() {
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              {/* Date badge circle */}
-              <div className={`absolute top-4 right-4 w-16 h-16 rounded-full bg-gradient-to-br ${useCase.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}>
-                <span className="text-white font-bold text-sm">D+{useCase.days}</span>
+              {/* Interval badge */}
+              <div className={`absolute top-4 right-4 inline-block px-4 py-2 rounded-full bg-gradient-to-br ${useCase.color} shadow-lg group-hover:scale-110 transition-transform`}>
+                <span className="text-white font-medium text-sm whitespace-nowrap">{t(`${useCase.key}.interval`)}</span>
               </div>
 
               {/* Emoji */}

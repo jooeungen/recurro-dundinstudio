@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Recurro – 중요한 반복 작업을 놓치지 마세요",
-    "description": "Recurro는 반복 작업을 관리하는 우아한 솔루션입니다. 반려동물 관리부터 집안 유지보수까지, 스마트 알림과 아름다운 디자인으로 체계적으로 관리하세요.",
-    "ogTitle": "Recurro – 개인 작업 추적 시스템",
-    "ogDescription": "중요한 반복 작업을 다시는 놓치지 마세요! Recurro로 반려동물 관리, 집안 유지보수, 차량 정비 등을 추적하세요."
+    "title": "Recurro – 정기적인 일정, 이제 놓치지 마세요",
+    "description": "정기적으로 해야 하지만 잊기 쉬운 일들을 관리하는 가장 스마트한 방법. 반려동물 케어부터 집안 관리까지, Recurro가 함께합니다.",
+    "ogTitle": "Recurro – 나만의 반복 일정 관리 시스템",
+    "ogDescription": "중요한 반복 일정을 절대 놓치지 마세요! 반려동물 관리, 차량 정비, 식물 물주기까지 Recurro로 간편하게."
   },
   "nav": {
     "features": "기능",
@@ -11,9 +11,9 @@
     "download": "다운로드"
   },
   "hero": {
-    "title": "중요한 반복 작업을 다시는 놓치지 마세요",
-    "subtitle": "Recurro는 정기적으로 발생하지만 잊기 쉬운 모든 작업을 관리하는 우아한 솔루션입니다.",
-    "description": "식물에 물 주기와 반려견 구충제부터 자동차 정비와 주전자 또는 오븐 청소까지, Recurro는 스마트 알림과 아름답고 직관적인 디자인으로 체계적으로 관리할 수 있도록 도와줍니다.",
+    "title": "정기적인 일정,\n이제 놓치지 마세요",
+    "subtitle": "해야 하는 걸 알지만 자꾸 까먹는 일들, Recurro가 기억합니다.",
+    "description": "반려동물 구충제, 식물 물주기, 차량 정비, 오븐 청소까지. 스마트한 알림과 직관적인 디자인으로 중요한 일정을 빠짐없이 관리하세요.",
     "downloadIOS": "iOS 다운로드",
     "downloadAndroid": "Android 다운로드",
     "orGetOn": "또는"
@@ -23,55 +23,61 @@
     "alt2": "작업 상세 정보를 보여주는 Recurro 앱 스크린샷"
   },
   "useCases": {
-    "title": "이런 상황에 완벽합니다",
+    "title": "이런 상황에 완벽해요",
     "home": {
       "emoji": "🏠",
-      "title": "집안 유지보수",
-      "description": "에어필터 교체, 배수구 청소, 커피머신 세척"
+      "title": "집안 관리",
+      "description": "에어필터 교체, 배수구 청소, 정수기 필터 갈기",
+      "interval": "60일 마다"
     },
     "pets": {
       "emoji": "🐕",
-      "title": "반려동물 관리",
-      "description": "월별 구충제, 정기 미용, 동물병원 검진"
+      "title": "반려동물",
+      "description": "구충제, 심장사상충약, 미용실, 병원 검진",
+      "interval": "30일 마다"
     },
     "vehicle": {
       "emoji": "🚗",
-      "title": "차량 정비",
-      "description": "오일 교환, 타이어 로테이션, 검사 갱신"
+      "title": "차량 관리",
+      "description": "엔진오일 교환, 타이어 위치 변경, 검사 갱신",
+      "interval": "90일 마다"
     },
     "plants": {
       "emoji": "🌱",
-      "title": "식물 관리",
-      "description": "물 주기 일정, 비료 주기, 분갈이"
+      "title": "식물 케어",
+      "description": "물주기, 영양제, 분갈이, 가지치기",
+      "interval": "7일 마다"
     },
     "health": {
       "emoji": "💊",
-      "title": "건강 루틴",
-      "description": "약 복용 알림, 치과 검진, 안과 검진"
+      "title": "건강 관리",
+      "description": "영양제 복용, 치과 스케일링, 안과 검진",
+      "interval": "180일 마다"
     },
     "cleaning": {
       "emoji": "🧽",
-      "title": "대청소",
-      "description": "오븐 청소, 카펫 세척, 창문 닦기"
+      "title": "청소",
+      "description": "오븐 청소, 에어컨 필터, 창문 닦기",
+      "interval": "30일 마다"
     }
   },
   "features": {
     "title": "주요 기능",
     "intervalTracking": {
-      "title": "진정한 간격 기반 추적",
-      "description": "캘린더 앱과 달리, 작업은 고정된 일정이 아닌 완료 날짜를 기준으로 재설정됩니다. 오늘 에어필터를 교체했다면? Recurro는 당신의 타이밍을 기반으로 다음 교체 시기를 정확히 알려줍니다."
+      "title": "⏱️ 나만의 주기로",
+      "description": "일반 캘린더와 달리, 내가 한 날짜를 기준으로 다음 일정이 자동 계산돼요. 오늘 에어컨 필터를 갈았다면, 다음 교체 시기는 오늘부터 계산됩니다."
     },
     "smartNotifications": {
-      "title": "스마트 알림",
-      "description": "작업 기한이 되면 부드러운 알림을 받으세요. 맞춤 설정 가능한 알림으로 중요한 유지보수를 절대 잊지 마세요."
+      "title": "🔔 똑똑한 알림",
+      "description": "할 일이 다가오면 부드럽게 알려드려요. 알림 설정을 내 스타일대로 바꿀 수 있어서, 중요한 일정을 절대 놓치지 않아요."
     },
     "visualStatus": {
-      "title": "시각적 상태 시스템",
-      "description": "기한이 지났거나, 오늘 해야 하거나, 곧 예정된 작업을 한눈에 확인하세요. 색상으로 구분된 카테고리와 명확한 상태 표시기로 체계적으로 관리하세요."
+      "title": "📊 한눈에 보는 상태",
+      "description": "지난 일, 오늘 할 일, 다가오는 일을 색깔로 구분해서 보여줘요. 뭘 먼저 해야 할지 고민할 필요 없어요."
     },
     "completionHistory": {
-      "title": "완료 기록",
-      "description": "작업이 완료된 시기를 추적하고 메모를 추가하세요. 시간에 따른 패턴을 확인하고 \"마지막으로 언제 했더라?\"라는 고민을 없애세요."
+      "title": "📝 완료 기록",
+      "description": "언제 뭘 했는지 기록하고 메모도 남길 수 있어요. \"저번에 언제 했더라?\" 고민은 이제 그만."
     },
     "nativeDesign": {
       "title": "깔끔한 네이티브 디자인",
@@ -98,12 +104,12 @@
     }
   },
   "download": {
-    "title": "Recurro 다운로드",
-    "subtitle": "인생의 중요한 반복 작업을 관리하는 방식을 혁신하세요",
-    "availableOn": "다음에서 이용 가능"
+    "title": "지금 시작하세요",
+    "subtitle": "중요한 일정 관리, 이제 Recurro와 함께",
+    "availableOn": "다운로드"
   },
   "footer": {
-    "tagline": "Recurro는 인생의 중요한 반복 작업을 관리하는 방식을 혁신합니다.",
+    "tagline": "정기적인 일정 관리의 새로운 기준, Recurro",
     "copyright": "© 2025 Dundin Studio. All rights reserved."
   }
 }

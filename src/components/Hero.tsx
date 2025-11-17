@@ -30,7 +30,12 @@ export default function Hero() {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
-            {t('title')}
+            {t('title').split('\n').map((line, i) => (
+              <span key={i}>
+                {line}
+                {i < t('title').split('\n').length - 1 && <br />}
+              </span>
+            ))}
           </h1>
 
           {/* Subtitle */}

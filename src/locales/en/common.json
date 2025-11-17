@@ -27,32 +27,38 @@
     "home": {
       "emoji": "🏠",
       "title": "Home maintenance",
-      "description": "Change air filters, clean gutters, descale coffee machine"
+      "description": "Change air filters, clean gutters, descale coffee machine",
+      "interval": "Every 60 days"
     },
     "pets": {
       "emoji": "🐕",
       "title": "Pet care",
-      "description": "Monthly flea treatments, regular grooming, vet checkups"
+      "description": "Monthly flea treatments, regular grooming, vet checkups",
+      "interval": "Every 30 days"
     },
     "vehicle": {
       "emoji": "🚗",
       "title": "Vehicle maintenance",
-      "description": "Oil changes, tire rotations, inspection renewals"
+      "description": "Oil changes, tire rotations, inspection renewals",
+      "interval": "Every 90 days"
     },
     "plants": {
       "emoji": "🌱",
       "title": "Plant care",
-      "description": "Watering schedules, fertilizing, repotting"
+      "description": "Watering schedules, fertilizing, repotting",
+      "interval": "Every 7 days"
     },
     "health": {
       "emoji": "💊",
       "title": "Health routines",
-      "description": "Medication reminders, dental cleanings, eye exams"
+      "description": "Medication reminders, dental cleanings, eye exams",
+      "interval": "Every 180 days"
     },
     "cleaning": {
       "emoji": "🧽",
       "title": "Deep cleaning",
-      "description": "Oven cleaning, carpet shampooing, window washing"
+      "description": "Oven cleaning, carpet shampooing, window washing",
+      "interval": "Every 30 days"
     }
   },
   "features": {
