@@ -20,7 +20,7 @@ export default function LanguageSwitcher() {
 
   const currentLocaleData = locales.find(l => l.code === currentLocale) || locales[0];
 
-  const handleLocaleChange = (locale: string) => {
+  const handleLocaleChange = (locale: 'en' | 'ko') => {
     startTransition(() => {
       router.replace(pathname, { locale });
       setIsOpen(false);
