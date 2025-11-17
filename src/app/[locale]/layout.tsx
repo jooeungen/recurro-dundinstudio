@@ -30,11 +30,20 @@ export async function generateMetadata({
       type: 'website',
       locale: locale,
       siteName: 'Recurro',
+      images: [
+        {
+          url: '/og-image.png',
+          width: 1366,
+          height: 768,
+          alt: 'Recurro App',
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: t('ogTitle'),
       description: t('ogDescription'),
+      images: ['/og-image.png'],
     },
     robots: {
       index: true,
