@@ -31,6 +31,14 @@ export default function Footer() {
             <div className="w-3 h-3 rounded-full bg-primary-300 opacity-60 animate-pulse" style={{ animationDelay: '0.6s' }}></div>
           </div>
 
+          {/* Contact Email */}
+          <a 
+            href="mailto:admin@dundinstudio.com" 
+            className="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-500 dark:hover:text-gray-300 transition-colors mb-2"
+          >
+            admin@dundinstudio.com
+          </a>
+
           {/* Copyright */}
           <p className="text-sm text-gray-500 dark:text-gray-500">
             {t('copyright')}
