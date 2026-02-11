@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(head:*)",
+      "Bash(git -C /Users/jooeunjin/Project/recurro.dundinstudio.com log --oneline -10)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run upload-codes:*)",
+      "Bash(curl:*)"
+    ]
+  }
+}

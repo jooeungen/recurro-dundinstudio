@@ -108,6 +108,50 @@
     "subtitle": "Transform how you manage life's important recurring tasks",
     "availableOn": "Available on"
   },
+  "codePage": {
+    "appName": "Recurro",
+    "appDescription": "Never miss important recurring tasks again. From pet care to home maintenance, stay organized with smart notifications and beautiful design.",
+    "downloadIOS": "Download for iOS",
+    "downloadAndroid": "Download for Android",
+    "howToRedeem": "How to enter your redeem code",
+    "androidSteps": {
+      "title": "Google Play (Android)",
+      "step1": "Install Recurro from the link above",
+      "step2": "Open the Google Play Store app",
+      "step3": "Tap the profile icon (top right)",
+      "step4": "Tap Payments & subscriptions > Redeem code",
+      "step5": "Enter the code!"
+    },
+    "iosSteps": {
+      "title": "App Store (iOS)",
+      "step1": "Install Recurro from the link above",
+      "step2": "Open the App Store app",
+      "step3": "Tap your profile icon (top right)",
+      "step4": "Tap Redeem Gift Card or Code",
+      "step5": "Tap Enter Code Manually",
+      "step6": "Enter the code!"
+    }
+  },
+  "codeForm": {
+    "pageTitle": "Get Your Redeem Code",
+    "title": "Enter your email to receive a free redeem code",
+    "couponLabel": "Coupon Code",
+    "couponPlaceholder": "Enter your coupon code",
+    "platformLabel": "Choose your platform",
+    "ios": "iOS",
+    "android": "Android",
+    "placeholder": "you@example.com",
+    "submit": "Get Code",
+    "sending": "Sending...",
+    "success": "Check your inbox! Your redeem code is on the way.",
+    "errorAlreadyClaimed": "This email has already received a code.",
+    "errorNoCodesLeft": "Sorry, all codes have been claimed.",
+    "errorInvalidEmail": "Please enter a valid email address.",
+    "errorInvalidPlatform": "Please select a platform (iOS or Android).",
+    "errorInvalidCoupon": "Invalid coupon code.",
+    "errorCouponExpired": "This coupon has expired.",
+    "errorGeneral": "Something went wrong. Please try again."
+  },
   "footer": {
     "tagline": "Recurro transforms how you manage life's important recurring tasks.",
     "copyright": "© 2025 DUNDIN STUDIO. All rights reserved."

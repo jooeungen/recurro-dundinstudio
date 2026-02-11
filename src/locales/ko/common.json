@@ -108,6 +108,50 @@
     "subtitle": "중요한 일정 관리, 이제 Recurro와 함께",
     "availableOn": "다운로드"
   },
+  "codePage": {
+    "appName": "Recurro",
+    "appDescription": "정기적으로 해야 하지만 잊기 쉬운 일들을 관리하는 가장 스마트한 방법. 반려동물 케어부터 집안 관리까지, Recurro가 함께합니다.",
+    "downloadIOS": "iOS 다운로드",
+    "downloadAndroid": "Android 다운로드",
+    "howToRedeem": "리딤코드 등록하는 법",
+    "androidSteps": {
+      "title": "Google Play (Android)",
+      "step1": "위 링크로 Recurro 앱 설치",
+      "step2": "Google Play Store 앱 열기",
+      "step3": "프로필 아이콘 클릭 (우 상단)",
+      "step4": "결제 & 구독 클릭 > 리딤코드 클릭",
+      "step5": "코드 입력!"
+    },
+    "iosSteps": {
+      "title": "App Store (iOS)",
+      "step1": "위 링크로 Recurro 앱 설치",
+      "step2": "App Store 앱 열기",
+      "step3": "프로필 아이콘 클릭 (우 상단)",
+      "step4": "기프트 카드 또는 코드 사용 클릭",
+      "step5": "수동으로 코드 입력 클릭",
+      "step6": "코드 입력!"
+    }
+  },
+  "codeForm": {
+    "pageTitle": "리딤 코드 받기",
+    "title": "이메일을 입력하시면 무료 리딤 코드를 보내드려요",
+    "couponLabel": "쿠폰 코드",
+    "couponPlaceholder": "쿠폰 코드를 입력하세요",
+    "platformLabel": "플랫폼을 선택하세요",
+    "ios": "iOS",
+    "android": "Android",
+    "placeholder": "you@example.com",
+    "submit": "코드 받기",
+    "sending": "전송 중...",
+    "success": "메일함을 확인하세요! 리딤 코드를 보내드렸어요.",
+    "errorAlreadyClaimed": "이미 코드를 받은 이메일입니다.",
+    "errorNoCodesLeft": "죄송합니다, 모든 코드가 소진되었습니다.",
+    "errorInvalidEmail": "올바른 이메일 주소를 입력해주세요.",
+    "errorInvalidPlatform": "플랫폼(iOS 또는 Android)을 선택해주세요.",
+    "errorInvalidCoupon": "유효하지 않은 쿠폰 코드입니다.",
+    "errorCouponExpired": "이 쿠폰은 만료되었습니다.",
+    "errorGeneral": "문제가 발생했습니다. 다시 시도해주세요."
+  },
   "footer": {
     "tagline": "정기적인 일정 관리의 새로운 기준, Recurro",
     "copyright": "© 2025 DUNDIN STUDIO. All rights reserved."
