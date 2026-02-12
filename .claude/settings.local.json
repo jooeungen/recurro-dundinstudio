@@ -6,7 +6,13 @@
       "Bash(npm install:*)",
       "Bash(npm run build:*)",
       "Bash(npm run upload-codes:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(vercel env ls:*)",
+      "Bash(npx vercel env:*)",
+      "Bash(npm run codes-stats:*)",
+      "Bash(npx tsx:*)",
+      "Bash(python3:*)",
+      "Bash(ls:*)"
     ]
   }
 }

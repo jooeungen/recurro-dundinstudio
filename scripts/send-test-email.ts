@@ -1,17 +1,5 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { kv } from '@vercel/kv';
+import 'dotenv/config';
 import { Resend } from 'resend';
-
-function getResend() {
-  return new Resend(process.env.RESEND_API_KEY);
-}
-
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const VALID_PLATFORMS = ['ios', 'android'] as const;
-type Platform = (typeof VALID_PLATFORMS)[number];
-
-const IOS_LINK = 'https://apps.apple.com/us/app/recurro/id6748042726';
-const ANDROID_LINK = 'https://play.google.com/store/apps/details?id=com.dundinstudio.recurro';
 
 const emailContent = {
   en: {
@@ -19,56 +7,30 @@ const emailContent = {
     intro: (platformLabel: string) => `Here is your redeem code for <strong>${platformLabel}</strong>:`,
     copyHint: 'Long press the code to copy',
     redeemNow: 'Redeem Now',
-    downloadApp: 'Download Recurro',
     downloadIOS: 'Download Recurro for iOS',
     downloadAndroid: 'Download Recurro for Android',
     catchPhrase: 'Never miss important recurring tasks again',
     websiteUrl: 'https://recurro.dundinstudio.com/en',
     howToTitle: 'Or enter your code manually',
     iosSteps: [
-      'Open the <strong>App Store</strong> app',
+      'Open the <strong>App Store</strong>',
       'Tap your profile icon (top right)',
       'Tap <strong>Redeem Gift Card or Code</strong>',
-      'Tap <strong>Enter Code Manually</strong>',
-      'Enter the code!',
+      'Tap <strong>Enter Code Manually</strong> and paste your code',
     ],
     androidSteps: [
-      'Open the <strong>Google Play Store</strong> app',
+      'Open the <strong>Google Play Store</strong>',
       'Tap the profile icon (top right)',
-      'Tap <strong>Payments & subscriptions</strong> → <strong>Redeem code</strong>',
-      'Enter the code!',
+      'Tap <strong>Payments &amp; subscriptions</strong> &rarr; <strong>Redeem code</strong>',
+      'Paste your code and confirm',
     ],
     keepSafe: 'This code is unique to you. Please keep it safe.',
     questions: 'Need help? Contact us at',
   },
-  ko: {
-    subject: (platformLabel: string) => `Recurro 리딤 코드 (${platformLabel})`,
-    intro: (platformLabel: string) => `<strong>${platformLabel}</strong> 리딤 코드입니다:`,
-    copyHint: '코드를 길게 눌러 복사하세요',
-    redeemNow: '바로 등록하기',
-    downloadApp: 'Recurro 다운로드',
-    downloadIOS: 'Recurro iOS 다운로드',
-    downloadAndroid: 'Recurro Android 다운로드',
-    catchPhrase: '중요한 반복 할 일, 다시는 놓치지 마세요',
-    websiteUrl: 'https://recurro.dundinstudio.com/ko',
-    howToTitle: '또는 직접 코드 입력하기',
-    iosSteps: [
-      '<strong>App Store</strong> 앱 열기',
-      '프로필 아이콘 클릭 (우 상단)',
-      '<strong>기프트 카드 또는 코드 사용</strong> 클릭',
-      '<strong>수동으로 코드 입력</strong> 클릭',
-      '코드 입력!',
-    ],
-    androidSteps: [
-      '<strong>Google Play Store</strong> 앱 열기',
-      '프로필 아이콘 클릭 (우 상단)',
-      '<strong>결제 & 구독</strong> 클릭 → <strong>리딤코드</strong> 클릭',
-      '코드 입력!',
-    ],
-    keepSafe: '이 코드는 회원님만을 위한 코드입니다. 안전하게 보관해주세요.',
-    questions: '도움이 필요하신가요?',
-  },
-} as const;
+};
+
+const IOS_LINK = 'https://apps.apple.com/us/app/recurro/id6748042726';
+const ANDROID_LINK = 'https://play.google.com/store/apps/details?id=com.dundinstudio.recurro';
 
 function getRedeemLink(platform: string, code: string) {
   if (platform === 'ios') {
@@ -77,8 +39,8 @@ function getRedeemLink(platform: string, code: string) {
   return `https://play.google.com/redeem?code=${code}`;
 }
 
-function buildEmailHtml(platform: string, code: string, locale: string) {
-  const t = locale === 'ko' ? emailContent.ko : emailContent.en;
+function buildEmailHtml(platform: string, code: string) {
+  const t = emailContent.en;
   const platformLabel = platform === 'ios' ? 'iOS' : 'Android';
   const downloadLink = platform === 'ios' ? IOS_LINK : ANDROID_LINK;
   const downloadLabel = platform === 'ios' ? t.downloadIOS : t.downloadAndroid;
@@ -94,7 +56,7 @@ function buildEmailHtml(platform: string, code: string, locale: string) {
     .join('');
 
   return `<!DOCTYPE html>
-<html lang="${locale === 'ko' ? 'ko' : 'en'}" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -225,100 +187,25 @@ function buildEmailHtml(platform: string, code: string, locale: string) {
 </html>`;
 }
 
-type ErrorCode =
-  | 'INVALID_EMAIL'
-  | 'INVALID_PLATFORM'
-  | 'INVALID_COUPON'
-  | 'COUPON_EXPIRED'
-  | 'ALREADY_CLAIMED'
-  | 'NO_CODES_LEFT'
-  | 'EMAIL_SEND_FAILED';
+async function main() {
+  const resend = new Resend(process.env.RESEND_API_KEY);
+  const platform = 'ios';
+  const code = 'FAKE-TEST-CODE-1234';
+  const html = buildEmailHtml(platform, code);
+  const t = emailContent.en;
 
-function errorResponse(code: ErrorCode, status: number) {
-  return NextResponse.json({ error: code }, { status });
-}
+  const { data, error } = await resend.emails.send({
+    from: 'Recurro <noreply@dundinstudio.com>',
+    to: 'jooeungen@gmail.com',
+    subject: t.subject('iOS'),
+    html,
+  });
 
-export async function POST(request: NextRequest) {
-  try {
-    const body = await request.json();
-    const email = (body.email ?? '').trim().toLowerCase();
-    const platform = (body.platform ?? '').trim().toLowerCase();
-    const coupon = (body.coupon ?? '').trim().toUpperCase();
-    const locale = (body.locale ?? 'en').trim().toLowerCase();
-
-    if (!email || !EMAIL_REGEX.test(email)) {
-      return errorResponse('INVALID_EMAIL', 400);
-    }
-
-    if (!VALID_PLATFORMS.includes(platform as Platform)) {
-      return errorResponse('INVALID_PLATFORM', 400);
-    }
-
-    if (!coupon) {
-      return errorResponse('INVALID_COUPON', 400);
-    }
-
-    // Lookup campaign
-    const campaign = await kv.get<{ expiresAt: string }>(`campaign:${coupon}`);
-    if (!campaign) {
-      return errorResponse('INVALID_COUPON', 404);
-    }
-
-    // Check expiration
-    if (new Date(campaign.expiresAt) < new Date()) {
-      return errorResponse('COUPON_EXPIRED', 410);
-    }
-
-    // Check if email already received a code for this coupon
-    const TEST_EMAILS = ['jooeungen@gmail.com'];
-    if (!TEST_EMAILS.includes(email)) {
-      const alreadyClaimed = await kv.sismember(`codes:emails:${coupon}`, email);
-      if (alreadyClaimed) {
-        return errorResponse('ALREADY_CLAIMED', 409);
-      }
-    }
-
-    // Atomically pop an available code from the coupon+platform pool
-    const code = await kv.spop<string>(`codes:${coupon}:${platform}:available`);
-    if (!code) {
-      return errorResponse('NO_CODES_LEFT', 410);
-    }
-
-    const platformLabel = platform === 'ios' ? 'iOS' : 'Android';
-    const t = locale === 'ko' ? emailContent.ko : emailContent.en;
-
-    // Send email via Resend
-    const { error: sendError } = await getResend().emails.send({
-      from: 'Recurro <noreply@dundinstudio.com>',
-      to: email,
-      subject: t.subject(platformLabel),
-      html: buildEmailHtml(platform, code, locale),
-    });
-
-    if (sendError) {
-      console.error('[send-code] Resend error:', sendError);
-      // Return code to available set if email failed
-      await kv.sadd(`codes:${coupon}:${platform}:available`, code);
-      return errorResponse('EMAIL_SEND_FAILED', 502);
-    }
-
-    // Record assignment and mark email as claimed
-    await Promise.all([
-      kv.set(`codes:assigned:${code}`, JSON.stringify({
-        email,
-        platform,
-        coupon,
-        sentAt: new Date().toISOString(),
-      })),
-      kv.sadd(`codes:emails:${coupon}`, email),
-    ]);
-
-    return NextResponse.json({ success: true });
-  } catch (err) {
-    console.error('[send-code] Error:', err);
-    return NextResponse.json(
-      { error: 'INTERNAL_ERROR' },
-      { status: 500 },
-    );
+  if (error) {
+    console.error('Failed:', error);
+    process.exit(1);
   }
+  console.log('Test email sent!', data);
 }
+
+main();

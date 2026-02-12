@@ -1,6 +1,6 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { FormEvent, useState } from 'react';
 
 type FormState = 'idle' | 'loading' | 'success' | 'error';
@@ -17,6 +17,7 @@ const ERROR_MAP: Record<string, string> = {
 
 export default function CodeForm() {
   const t = useTranslations('codeForm');
+  const locale = useLocale();
   const [coupon, setCoupon] = useState('');
   const [email, setEmail] = useState('');
   const [platform, setPlatform] = useState<Platform | null>(null);
@@ -33,7 +34,7 @@ export default function CodeForm() {
       const res = await fetch('/api/send-code', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, platform, coupon }),
+        body: JSON.stringify({ email, platform, coupon, locale }),
       });
 
       if (res.ok) {

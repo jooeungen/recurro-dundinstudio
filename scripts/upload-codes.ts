@@ -101,12 +101,19 @@ async function showStats() {
       kv.scard(`codes:emails:${coupon}`),
     ]);
 
+    const emails = await kv.smembers<string[]>(`codes:emails:${coupon}`);
+
     console.log(`Campaign: ${coupon}`);
     console.log(`  Expires:           ${campaign?.expiresAt ?? 'N/A'}${expired ? ' (EXPIRED)' : ''}`);
     console.log(`  iOS available:     ${iosAvailable}`);
     console.log(`  Android available: ${androidAvailable}`);
     console.log(`  Total available:   ${iosAvailable + androidAvailable}`);
     console.log(`  Claimed emails:    ${claimed}`);
+    if (emails.length > 0) {
+      for (const email of emails.sort()) {
+        console.log(`    - ${email}`);
+      }
+    }
     console.log();
   }
 }
