@@ -150,6 +150,7 @@
     "errorInvalidPlatform": "Please select a platform (iOS or Android).",
     "errorInvalidCoupon": "Invalid coupon code.",
     "errorCouponExpired": "This coupon has expired.",
+    "errorEmailSendFailed": "We're unable to send emails right now. Please try again later.",
     "errorGeneral": "Something went wrong. Please try again."
   },
   "footer": {

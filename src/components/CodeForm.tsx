@@ -13,6 +13,8 @@ const ERROR_MAP: Record<string, string> = {
   INVALID_PLATFORM: 'errorInvalidPlatform',
   INVALID_COUPON: 'errorInvalidCoupon',
   COUPON_EXPIRED: 'errorCouponExpired',
+  EMAIL_SEND_FAILED: 'errorEmailSendFailed',
+  INTERNAL_ERROR: 'errorGeneral',
 };
 
 export default function CodeForm() {
