@@ -1,9 +1,41 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { kv } from '@vercel/kv';
 import { Resend } from 'resend';
+import sgMail from '@sendgrid/mail';
 
 function getResend() {
   return new Resend(process.env.RESEND_API_KEY);
+}
+
+if (process.env.SENDGRID_API_KEY) {
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+}
+
+async function sendEmail(to: string, subject: string, html: string): Promise<string | null> {
+  // Try Resend first
+  const { error: resendError } = await getResend().emails.send({
+    from: 'Recurro <noreply@dundinstudio.com>',
+    to,
+    subject,
+    html,
+  });
+
+  if (!resendError) return null;
+
+  console.warn('[send-code] Resend failed, trying SendGrid fallback:', resendError);
+
+  // Fallback to SendGrid
+  if (!process.env.SENDGRID_API_KEY) {
+    return resendError.message ?? 'Resend failed and no SendGrid fallback configured';
+  }
+
+  try {
+    await sgMail.send({ from: 'Recurro <noreply@dundinstudio.com>', to, subject, html });
+    return null;
+  } catch (sgError) {
+    console.error('[send-code] SendGrid fallback also failed:', sgError);
+    return 'Both Resend and SendGrid failed';
+  }
 }
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -287,16 +319,11 @@ export async function POST(request: NextRequest) {
     const platformLabel = platform === 'ios' ? 'iOS' : 'Android';
     const t = locale === 'ko' ? emailContent.ko : emailContent.en;
 
-    // Send email via Resend
-    const { error: sendError } = await getResend().emails.send({
-      from: 'Recurro <noreply@dundinstudio.com>',
-      to: email,
-      subject: t.subject(platformLabel),
-      html: buildEmailHtml(platform, code, locale),
-    });
+    // Send email (Resend first, SendGrid fallback)
+    const sendError = await sendEmail(email, t.subject(platformLabel), buildEmailHtml(platform, code, locale));
 
     if (sendError) {
-      console.error('[send-code] Resend error:', sendError);
+      console.error('[send-code] Email send failed:', sendError);
       // Return code to available set if email failed
       await kv.sadd(`codes:${coupon}:${platform}:available`, code);
       return errorResponse('EMAIL_SEND_FAILED', 502);
